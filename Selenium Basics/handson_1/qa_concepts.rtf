@@ -1,0 +1,253 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\froman\fcharset0 Times-Bold;\f2\fmodern\fcharset0 Courier;
+\f3\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid201\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid301\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid4}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww30040\viewh18980\viewkind0
+\deftab720
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 \
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 1. Testing Types for the Course Management API\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs24 \cf0 Unit Testing
+\f0\b0 \
+Test Case:\uc0\u8232 Verify that the function used to create a course correctly stores the course details in the course object.\
+Category:\uc0\u8232 Functional Testing\
+
+\f1\b Integration Testing
+\f0\b0 \
+Test Case:\uc0\u8232 Verify that the POST 
+\f2\fs26 /api/courses/
+\f0\fs24  API endpoint correctly inserts the course details into the database.\
+Category:\uc0\u8232 Functional Testing\
+
+\f1\b System Testing
+\f0\b0 \
+Test Case:\uc0\u8232 Verify the complete workflow by creating a course using the POST API and retrieving it using the GET API.\
+Category:\uc0\u8232 Functional Testing\
+
+\f1\b User Acceptance Testing (UAT)
+\f0\b0 \
+Test Case:\uc0\u8232 Verify that a college administrator can successfully create a new course with valid details.\
+Category:\uc0\u8232 Functional Testing\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Non-Functional Testing Example\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Performance Testing\
+Test whether the Course Management API can handle 100 concurrent requests and return responses within two seconds without failures.\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 2. Difference Between Black-Box Testing and White-Box Testing\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Black-Box Testing is performed without any knowledge of the application\'92s source code. The tester validates whether the application behaves correctly based on inputs and outputs. It mainly focuses on functionality and is usually performed by QA Engineers.\
+White-Box Testing is performed with complete knowledge of the application\'92s internal code, logic, and structure. It focuses on code coverage, conditions, loops, and execution paths. It is usually performed by Developers.\
+A QA Engineer generally performs Black-Box Testing, whereas a Developer performs White-Box Testing.\
+\
+\pard\pardeftab720\sa448\partightenfactor0
+
+\f1\b\fs54 \cf0 3. Formal Test Cases for POST\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f3\fs39 \cf0 /api/courses/
+\f1\fs36 \
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 Test Case 1\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Test Case ID:\uc0\u8232 TC001\
+Description:\uc0\u8232 Verify that a new course is created successfully using valid course details.\
+Preconditions:\uc0\u8232 The Course Management API is running and accessible.\
+Test Steps:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	1	}\expnd0\expndtw0\kerning0
+Send a POST request to 
+\f2\fs26 /api/courses/
+\f0\fs24 .\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	2	}\expnd0\expndtw0\kerning0
+Enter valid course details.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	3	}\expnd0\expndtw0\kerning0
+Submit the request.\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 Expected Result:\uc0\u8232 The API returns HTTP Status Code 201 (Created), and the course is successfully stored.\
+Actual Result:\
+\
+Pass/Fail:\
+\
+\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Test Case 2\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Test Case ID:\uc0\u8232 TC002\
+Description:\uc0\u8232 Verify that the API rejects a request when the course name is missing.\
+Preconditions:\uc0\u8232 The Course Management API is running.\
+Test Steps:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	1	}\expnd0\expndtw0\kerning0
+Send a POST request without the course name.\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	2	}\expnd0\expndtw0\kerning0
+Submit the request.\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 Expected Result:\uc0\u8232 The API returns HTTP Status Code 400 (Bad Request) with an appropriate validation error message.\
+Actual Result:\
+\
+\
+Pass/Fail:\
+\
+\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Test Case 3\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Test Case ID:\uc0\u8232 TC003\
+Description:\uc0\u8232 Verify that duplicate course codes are not allowed.\
+Preconditions:\uc0\u8232 A course with the same course code already exists.\
+Test Steps:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls3\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	1	}\expnd0\expndtw0\kerning0
+Send a POST request using an existing course code.\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 {\listtext	2	}\expnd0\expndtw0\kerning0
+Submit the request.\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 Expected Result:\uc0\u8232 The API rejects the request and displays a duplicate course code error.\
+Actual Result:\
+\
+Pass/Fail:\
+\
+\
+\pard\pardeftab720\sa321\partightenfactor0
+
+\f1\b\fs48 \cf0 Task 2: Defect Lifecycle & Severity Classification\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\fs36 \cf0 1. Defect Lifecycle\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 The defect lifecycle follows these stages:\
+New\
+\uc0\u8595 \
+Assigned\
+\uc0\u8595 \
+Open\
+\uc0\u8595 \
+Fixed\
+\uc0\u8595 \
+Retest\
+\uc0\u8595 \
+Verified\
+\uc0\u8595 \
+Closed\
+Rejected:\uc0\u8232 A defect is marked as Rejected when it is invalid, cannot be reproduced, or is not considered a bug.\
+Deferred:\uc0\u8232 A defect is marked as Deferred when it is accepted as a valid issue but postponed to a future release due to time constraints or lower priority.\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 2. Severity and Priority Classification\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 Bug A\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Issue:\uc0\u8232 POST 
+\f2\fs26 /api/courses/
+\f0\fs24  returns HTTP 500 Internal Server Error for every request.\
+Severity:\uc0\u8232 Critical\
+Priority:\uc0\u8232 P1\
+Justification:\uc0\u8232 The API is completely unusable because no course can be created. It has the highest impact and requires immediate fixing.\
+\
+\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Bug B\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Issue:\uc0\u8232 Course names longer than 150 characters are silently truncated.\
+Severity:\uc0\u8232 Medium\
+Priority:\uc0\u8232 P2\
+Justification:\uc0\u8232 The application continues to function, but data integrity is affected because information is lost.\
+\
+\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Bug C\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Issue:\uc0\u8232 The Swagger documentation contains a spelling mistake.\
+Severity:\uc0\u8232 Low\
+Priority:\uc0\u8232 P4\
+Justification:\uc0\u8232 This is only a cosmetic issue and does not affect application functionality.\
+\
+\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Bug D\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Issue:\uc0\u8232 Login occasionally returns HTTP 401 even when valid credentials are provided.\
+Severity:\uc0\u8232 High\
+Priority:\uc0\u8232 P1\
+Justification:\uc0\u8232 The issue affects users intermittently and can prevent access to the application. Since it is difficult to reproduce and affects authentication, it should be fixed urgently.\
+\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 3. Defect Report\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Defect ID:\uc0\u8232 BUG-001\
+Title:\uc0\u8232 POST 
+\f2\fs26 /api/courses/
+\f0\fs24  returns HTTP 500 Internal Server Error.\
+Environment:\uc0\u8232 macOS, Google Chrome\
+Build Version:\uc0\u8232 Version 1.0\
+Severity:\uc0\u8232 Critical\
+Priority:\uc0\u8232 P1\
+Steps to Reproduce:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls4\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	1	}\expnd0\expndtw0\kerning0
+Launch the Course Management API.\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	2	}\expnd0\expndtw0\kerning0
+Send a POST request to 
+\f2\fs26 /api/courses/
+\f0\fs24 .\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	3	}\expnd0\expndtw0\kerning0
+Enter valid course details.\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 {\listtext	4	}\expnd0\expndtw0\kerning0
+Submit the request.\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 Expected Result:\uc0\u8232 The course should be created successfully and the API should return HTTP Status Code 201 (Created).\
+Actual Result:\uc0\u8232 The API returns HTTP Status Code 500 Internal Server Error.\
+Attachment:\uc0\u8232 Screenshot of the HTTP 500 error.\
+\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 4. Difference Between Severity and Priority\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 Severity refers to the impact a defect has on the application\'92s functionality.\
+Priority refers to how urgently the defect should be fixed.\
+Example:\
+A spelling mistake on the CEO\'92s dashboard has Low Severity because it does not affect the application\'92s functionality. However, it has High Priority because it is visible to important stakeholders and should be corrected before release.\
+\
+}
