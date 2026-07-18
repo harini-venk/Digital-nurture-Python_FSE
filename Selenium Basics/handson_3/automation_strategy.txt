@@ -1,0 +1,156 @@
+
+Task 1 – Automation Decision and Test Case Selection
+
+1. Criteria for Deciding Whether a Test Case Should Be Automated
+Criterion 1: Repetitive Execution
+Test cases that need to be executed repeatedly are good candidates for automation.
+Application: The POST /api/courses/ API test is executed after every code change, making it suitable for automation.
+Criterion 2: Regression Testing
+Regression tests ensure that existing functionality continues to work after modifications.
+Application: The API creation test should be automated because it must be executed after every new feature or bug fix.
+Criterion 3: Stable Functionality
+Stable features that rarely change are ideal for automation.
+Application: The POST /api/courses/ endpoint has a stable API contract, making it a good automation candidate.
+Criterion 4: Data-Driven Testing
+Tests requiring multiple input combinations are suitable for automation.
+Application: The course creation API can be tested with different course names, codes, and credit values automatically.
+Criterion 5: High Business Impact
+Critical business functionalities should always be automated.
+Application: Creating a course is a core feature of the Course Management System, making it an important automation candidate.
+
+2. Decide Whether to Automate or Perform Manually
+Regression test for all CRUD endpoints after every code change
+Decision: Automate
+Reason: The test is repetitive and executed frequently.
+Exploratory testing of a new search feature
+Decision: Manual
+Reason: Exploratory testing requires human observation and creativity.
+Performance test with 100 concurrent users
+Decision: Automate
+Reason: Performance testing requires automation tools to simulate multiple users.
+UI test for the login page
+Decision: Automate
+Reason: The login page is used frequently and should always work correctly.
+Verify Swagger API documentation
+Decision: Manual
+Reason: Documentation usually requires manual review for readability and correctness.
+Smoke test after deployment
+Decision: Automate
+Reason: Smoke tests should execute automatically after every deployment.
+
+3. Test Automation ROI
+ROI (Return on Investment) measures whether the time spent creating automated tests is recovered through repeated execution.
+Automation Development Time:
+4 hours
+Manual Execution Time:
+30 minutes (0.5 hours)
+Break-even Calculation:
+4 ÷ 0.5 = 8 executions
+Therefore, after approximately 8 executions, the automated test becomes more cost-effective than manual testing.
+After the 10th execution, a maintenance effort of 20% should be considered. Even with maintenance, automation remains more efficient than repeated manual execution.
+
+
+4. Flaky Test
+A flaky test is a test that sometimes passes and sometimes fails without any changes to the application.
+Example:
+A Selenium test clicks a button before it becomes clickable, causing random failures.
+Ways to prevent flaky tests:
+Use Explicit Waits instead of time.sleep().
+Use reliable locators such as ID or CSS Selectors.
+Keep the test environment stable and independent.
+
+
+Task 2 – Compare Automation Framework Types
+
+1. Linear Framework
+Description:
+The Linear Framework executes test scripts sequentially without separating test data or reusable components.
+Advantage:
+Easy to understand and implement.
+Disadvantage:
+Difficult to maintain for large projects.
+Example:
+Automating a single login functionality.
+
+
+2. Modular Framework
+Description:
+The application is divided into reusable modules, and each module has separate test scripts.
+Advantage:
+Code reuse reduces duplication.
+Disadvantage:
+Requires planning and modular design.
+Example:
+Separate modules for Login, Course Management, and Student Management.
+
+
+3. Data-Driven Framework
+Description:
+Test data is stored outside the scripts in files such as Excel, CSV, or JSON. The same script executes multiple test cases using different input data.
+Advantage:
+Large amounts of test data can be tested efficiently.
+Disadvantage:
+Initial setup is more complex.
+Example:
+Testing course creation using hundreds of different course names and codes.
+
+
+4. Keyword-Driven Framework
+Description:
+Test steps are represented using predefined keywords such as Login, Click, Enter Text, and Logout.
+Advantage:
+Non-technical users can create test cases.
+Disadvantage:
+Framework development requires additional effort.
+Example:
+Business analysts create test cases using predefined keywords.
+
+
+5. Hybrid Framework
+Description:
+The Hybrid Framework combines the features of Modular, Data-Driven, and Keyword-Driven frameworks.
+Advantage:
+Highly reusable, flexible, and scalable.
+Disadvantage:
+Most complex framework to develop.
+Example:
+Large enterprise applications such as the Course Management System.
+
+6. Recommended Framework
+Recommended Framework:
+Hybrid Framework
+Justification:
+The project requires testing login with 50 different user credentials, reusing login functionality across multiple test cases, and allowing both technical and non-technical team members to contribute.
+A Hybrid Framework combines reusable modules, external test data, and keyword-driven testing, making it the most suitable solution.
+
+
+7. Suggested Hybrid Framework Folder Structure
+CourseManagementAutomation/
+
+config/
+    config.py
+
+pages/
+    login_page.py
+    course_page.py
+
+tests/
+    test_login.py
+    test_courses.py
+
+data/
+    login_data.xlsx
+    course_data.csv
+
+utilities/
+    browser.py
+    helpers.py
+
+reports/
+    report.html
+
+screenshots/
+
+requirements.txt
+
+

@@ -1,0 +1,140 @@
+
+Task 1: V-Model Mapping
+
+1. V-Model
+                  SDLC                          TDLC
+
+           Requirements  ---------------->  Acceptance Testing
+
+             System Design  ------------->  System Testing
+
+         Architecture Design ----------->  Integration Testing
+
+             Module Design  ------------->  Unit Testing
+
+                      Coding
+
+Coding is the bottom point of the V-Model. Development activities are performed on the left side, while the corresponding testing activities are carried out on the right side.
+
+
+2. SDLC Phase and Corresponding Test Artifact
+Requirements Phase
+Corresponding Testing Phase: Acceptance Testing
+Test Artifact Produced: Acceptance Test Plan and Acceptance Test Cases are prepared based on business requirements.
+
+System Design Phase
+Corresponding Testing Phase: System Testing
+Test Artifact Produced: System Test Plan and System Test Cases are prepared to validate the complete system.
+
+Architecture Design Phase
+Corresponding Testing Phase: Integration Testing
+Test Artifact Produced: Integration Test Plan and Integration Test Cases are prepared to verify interactions between different modules.
+
+Module Design Phase
+Corresponding Testing Phase: Unit Testing
+Test Artifact Produced: Unit Test Cases are prepared to verify individual functions and modules.
+
+Coding Phase
+Corresponding Testing Phase: Execution of all planned tests.
+Test Artifact Produced: Source code and executable application.
+
+
+3. Entry and Exit Criteria
+Unit Testing
+Entry Criteria
+	•	Module development is completed.
+	•	Source code is available.
+	•	Unit test cases are prepared.
+Exit Criteria
+	•	All unit test cases are executed.
+	•	No critical defects remain.
+	•	Unit testing report is completed.
+
+Integration Testing
+Entry Criteria
+	•	Individual modules have passed unit testing.
+	•	Modules are integrated successfully.
+Exit Criteria
+	•	Integration test cases are executed.
+	•	Communication between modules works correctly.
+	•	Critical integration defects are fixed.
+
+System Testing
+Entry Criteria
+	•	Complete application is deployed in the testing environment.
+	•	Integration testing is completed.
+Exit Criteria
+	•	All system test cases are executed.
+	•	No High or Critical defects remain.
+	•	System testing report is completed.
+
+Acceptance Testing
+Entry Criteria
+	•	System testing is successfully completed.
+	•	Application is ready for customer validation.
+Exit Criteria
+	•	Customer accepts the application.
+	•	All agreed business requirements are satisfied.
+	•	Product receives approval for release.
+
+
+4. Early QA Engagement Points
+QA should participate during the Requirements Phase by reviewing requirements for ambiguity, completeness, and testability before development begins.
+QA should also participate during the Design Phase by reviewing system architecture and identifying potential testing challenges early.
+Early QA involvement helps prevent defects instead of detecting them after development.
+
+
+Task 2 – Agile QA and Shift-Left Testing
+
+1. Problems with Waterfall Testing
+Problem 1
+Defects are identified very late, making them expensive and time-consuming to fix.
+Problem 2
+Requirement misunderstandings remain unnoticed until the testing phase.
+Problem 3
+Testing is delayed until development is complete, increasing project risk and delaying releases.
+
+
+2. QA Responsibilities in Agile Ceremonies
+Sprint Planning
+The QA Engineer reviews user stories, defines acceptance criteria, estimates testing effort, and prepares test cases.
+
+Daily Stand-up
+The QA Engineer reports testing progress, discusses blockers, communicates defects, and collaborates with developers.
+
+Sprint Review
+The QA Engineer validates completed user stories, demonstrates tested features, and confirms acceptance criteria are met.
+
+Retrospective
+The QA Engineer discusses issues faced during testing, suggests process improvements, and recommends better testing practices for future sprints.
+
+
+3. Shift-Left Practices
+Practice 1
+Review requirements for testability before development starts to identify ambiguities and missing requirements.
+
+Practice 2
+Write test cases before development begins using Test Driven Development (TDD) or Behavior Driven Development (BDD).
+
+Practice 3
+Perform static code analysis using automated tools to identify coding issues before execution.
+
+Practice 4
+Perform API contract testing before integrating different services to ensure compatibility between components.
+
+4. Acceptance Criteria Using Given-When-Then Format
+Scenario 1 – Successful Course Creation
+Given the college administrator is logged into the system,
+When the administrator enters valid course details and submits the form,
+Then the course should be created successfully and a confirmation message should be displayed.
+
+Scenario 2 – Duplicate Course Code
+Given a course with the same course code already exists,
+When the administrator submits another course using the same course code,
+Then the system should reject the request and display an appropriate duplicate course code error message.
+
+
+Scenario 3 – Missing Required Fields
+Given the administrator is creating a new course,
+When one or more mandatory fields are left empty,
+Then the system should prevent submission and display validation messages for the missing fields.

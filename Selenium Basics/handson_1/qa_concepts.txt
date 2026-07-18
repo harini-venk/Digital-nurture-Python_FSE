@@ -1,0 +1,283 @@
+
+
+1. Testing Types for the Course Management API
+
+Unit Testing
+
+Test Case:
+Verify that the function used to create a course correctly stores the course details in the course object.
+
+Category:
+Functional Testing
+
+Integration Testing
+
+Test Case:
+Verify that the POST /api/courses/ API endpoint correctly inserts the course details into the database.
+
+Category:
+Functional Testing
+
+System Testing
+
+Test Case:
+Verify the complete workflow by creating a course using the POST API and retrieving it using the GET API.
+
+Category:
+Functional Testing
+
+User Acceptance Testing (UAT)
+
+Test Case:
+Verify that a college administrator can successfully create a new course with valid details.
+
+Category:
+Functional Testing
+
+Non-Functional Testing Example
+
+Performance Testing
+
+Test whether the Course Management API can handle 100 concurrent requests and return responses within two seconds without failures.
+
+
+2. Difference Between Black-Box Testing and White-Box Testing
+
+Black-Box Testing is performed without any knowledge of the application’s source code. The tester validates whether the application behaves correctly based on inputs and outputs. It mainly focuses on functionality and is usually performed by QA Engineers.
+
+White-Box Testing is performed with complete knowledge of the application’s internal code, logic, and structure. It focuses on code coverage, conditions, loops, and execution paths. It is usually performed by Developers.
+
+A QA Engineer generally performs Black-Box Testing, whereas a Developer performs White-Box Testing.
+
+
+3. Formal Test Cases for POST /api/courses/
+
+Test Case 1
+
+Test Case ID:
+TC001
+
+Description:
+Verify that a new course is created successfully using valid course details.
+
+Preconditions:
+The Course Management API is running and accessible.
+
+Test Steps:
+
+1. Send a POST request to /api/courses/.
+2. Enter valid course details.
+3. Submit the request.
+
+Expected Result:
+The API returns HTTP Status Code 201 (Created), and the course is successfully stored.
+
+Actual Result:
+
+
+Pass/Fail:
+
+
+
+Test Case 2
+
+Test Case ID:
+TC002
+
+Description:
+Verify that the API rejects a request when the course name is missing.
+
+Preconditions:
+The Course Management API is running.
+
+Test Steps:
+
+1. Send a POST request without the course name.
+2. Submit the request.
+
+Expected Result:
+The API returns HTTP Status Code 400 (Bad Request) with an appropriate validation error message.
+
+Actual Result:
+
+
+Pass/Fail:
+
+
+
+Test Case 3
+
+Test Case ID:
+TC003
+
+Description:
+Verify that duplicate course codes are not allowed.
+
+Preconditions:
+A course with the same course code already exists.
+
+Test Steps:
+
+1. Send a POST request using an existing course code.
+2. Submit the request.
+
+Expected Result:
+The API rejects the request and displays a duplicate course code error.
+
+Actual Result:
+
+
+
+Pass/Fail:
+
+
+
+Task 2: Defect Lifecycle & Severity Classification
+
+1. Defect Lifecycle
+
+The defect lifecycle follows these stages:
+
+New
+
+↓
+
+Assigned
+
+↓
+
+Open
+
+↓
+
+Fixed
+
+↓
+
+Retest
+
+↓
+
+Verified
+
+↓
+
+Closed
+
+Rejected:
+A defect is marked as Rejected when it is invalid, cannot be reproduced, or is not considered a bug.
+
+Deferred:
+A defect is marked as Deferred when it is accepted as a valid issue but postponed to a future release due to time constraints or lower priority.
+
+
+
+2. Severity and Priority Classification
+
+Bug A
+
+Issue:
+POST /api/courses/ returns HTTP 500 Internal Server Error for every request.
+
+Severity:
+Critical
+
+Priority:
+P1
+
+Justification:
+The API is completely unusable because no course can be created. It has the highest impact and requires immediate fixing.
+
+
+Bug B
+
+Issue:
+Course names longer than 150 characters are silently truncated.
+
+Severity:
+Medium
+
+Priority:
+P2
+
+Justification:
+The application continues to function, but data integrity is affected because information is lost.
+
+
+Bug C
+
+Issue:
+The Swagger documentation contains a spelling mistake.
+
+Severity:
+Low
+
+Priority:
+P4
+
+Justification:
+This is only a cosmetic issue and does not affect application functionality.
+
+
+Bug D
+
+Issue:
+Login occasionally returns HTTP 401 even when valid credentials are provided.
+
+Severity:
+High
+
+Priority:
+P1
+
+Justification:
+The issue affects users intermittently and can prevent access to the application. Since it is difficult to reproduce and affects authentication, it should be fixed urgently.
+
+
+3. Defect Report
+
+Defect ID:
+BUG-001
+
+Title:
+POST /api/courses/ returns HTTP 500 Internal Server Error.
+
+Environment:
+macOS, Google Chrome
+
+Build Version:
+Version 1.0
+
+Severity:
+Critical
+
+Priority:
+P1
+
+Steps to Reproduce:
+
+1. Launch the Course Management API.
+2. Send a POST request to /api/courses/.
+3. Enter valid course details.
+4. Submit the request.
+
+Expected Result:
+The course should be created successfully and the API should return HTTP Status Code 201 (Created).
+
+Actual Result:
+The API returns HTTP Status Code 500 Internal Server Error.
+
+Attachment:
+Screenshot of the HTTP 500 error.
+
+
+4. Difference Between Severity and Priority
+
+Severity refers to the impact a defect has on the application’s functionality.
+
+Priority refers to how urgently the defect should be fixed.
+
+Example:
+
+A spelling mistake on the CEO’s dashboard has Low Severity because it does not affect the application’s functionality. However, it has High Priority because it is visible to important stakeholders and should be corrected before release.
+
